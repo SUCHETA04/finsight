@@ -3,11 +3,11 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "start": "tsx src/server.ts",
-    "dev": "tsx watch src/server.ts",
+    "start": "npx tsx src/server.ts",
+    "dev": "npx tsx watch src/server.ts",
     "build": "echo build skipped",
-    "migrate": "tsx scripts/migrate.ts",
-    "seed": "tsx scripts/seed.ts"
+    "migrate": "npx tsx scripts/migrate.ts",
+    "seed": "npx tsx scripts/seed.ts"
   },
   "keywords": [],
   "author": "",
