@@ -41,9 +41,9 @@ export function KPICard({ label, value, change, changeLabel, variant, isLoading,
       }}
       className="relative glass-panel rounded-3xl p-8 flex flex-col justify-between transition-all overflow-hidden group hover:border-accent/40 hover:shadow-glow"
     >
-      {/* Glow effect blob behind card items */}
+      {}
       <div className="absolute -top-24 -right-24 w-48 h-48 bg-accent/10 rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
-      {/* Subtle shine effect on hover */}
+      {}
       <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/40 to-transparent opacity-0 group-hover:opacity-100 transform -translate-x-full group-hover:translate-x-full transition-all duration-1000 ease-in-out pointer-events-none" />
       
       <div className="relative z-10 flex justify-between items-center mb-4">

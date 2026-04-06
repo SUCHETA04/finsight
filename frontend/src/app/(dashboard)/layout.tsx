@@ -13,10 +13,10 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
 
   return (
     <div className="flex h-screen bg-transparent selection:bg-accent/30 selection:text-primary">
-      {/* Sidebar with Glassmorphism and Depth */}
+      {}
       <aside className="relative w-64 flex-shrink-0 bg-sidebar-bg/95 backdrop-blur-xl border-r border-white/10 text-sidebar-text flex flex-col shadow-2xl z-20">
         <div className="p-6 font-display text-2xl tracking-wide border-b border-white/5 relative overflow-hidden">
-          {/* Subtle glow behind logo */}
+          {}
           <div className="absolute top-0 right-0 w-32 h-32 bg-accent/20 blur-3xl rounded-full transform translate-x-1/2 -translate-y-1/2 pointer-events-none" />
           <span className="relative z-10 bg-clip-text text-transparent bg-gradient-to-r from-white to-blue-200 drop-shadow-sm">FINSIGHT</span>
         </div>
@@ -63,20 +63,20 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
       </aside>
 
       <main className="flex-1 min-w-0 overflow-auto flex flex-col relative">
-        {/* Glass Header */}
+        {}
         <header className="h-20 border-b border-white/30 bg-white/40 backdrop-blur-xl flex flex-shrink-0 items-center px-8 z-10 sticky top-0 shadow-sm transition-all duration-300">
           <h2 className="font-display font-medium text-2xl text-primary capitalize flex-1 tracking-tight drop-shadow-sm">
             {pathname.split('/')[1] || 'Dashboard'}
           </h2>
           <div className="flex items-center gap-4">
-             {/* Decorative header elements could go here */}
+             {}
              <div className="h-8 w-8 rounded-full bg-white/60 border border-white/50 shadow-sm flex items-center justify-center animate-pulseGlow cursor-pointer hover:bg-white transition-colors">
                <div className="w-2 h-2 bg-accent rounded-full" />
              </div>
           </div>
         </header>
         
-        {/* Content Area */}
+        {}
         <div className="p-8 flex-1 max-w-7xl mx-auto w-full relative z-0">
           {children}
         </div>
