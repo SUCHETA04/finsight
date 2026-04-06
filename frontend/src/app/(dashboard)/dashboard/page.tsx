@@ -72,7 +72,7 @@ export default function DashboardPage() {
           initial={{ opacity: 0, y: 25, scale: 0.98 }}
           animate={!loading ? { opacity: 1, y: 0, scale: 1 } : {}}
           transition={{ duration: 0.7, delay: 0.3, type: "spring", stiffness: 60, damping: 15 }}
-          className="lg:col-span-2 relative bg-surface border border-border/80 rounded-2xl p-7 flex flex-col shadow-sm hover:shadow-lg transition-all overflow-hidden group"
+          className="lg:col-span-2 relative glass-panel rounded-3xl p-8 flex flex-col hover:shadow-lg transition-all overflow-hidden group hover:border-accent/40"
         >
           <div className="absolute inset-0 bg-gradient-to-br from-transparent to-black/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
           <h3 className="font-sans font-medium text-lg text-gray-900 mb-6 relative z-10">Monthly Trends</h3>
@@ -89,7 +89,7 @@ export default function DashboardPage() {
           initial={{ opacity: 0, y: 25, scale: 0.98 }}
           animate={!loading ? { opacity: 1, y: 0, scale: 1 } : {}}
           transition={{ duration: 0.7, delay: 0.4, type: "spring", stiffness: 60, damping: 15 }}
-          className="relative bg-surface border border-border/80 rounded-2xl p-7 flex flex-col shadow-sm hover:shadow-lg transition-all overflow-hidden group"
+          className="relative glass-panel rounded-3xl p-8 flex flex-col hover:shadow-lg transition-all overflow-hidden group hover:border-accent/40"
         >
           <div className="absolute inset-0 bg-gradient-to-br from-transparent to-black/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
           <h3 className="font-sans font-medium text-lg text-gray-900 mb-6 relative z-10">Expense Breakdown</h3>

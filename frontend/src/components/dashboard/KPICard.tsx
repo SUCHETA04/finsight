@@ -25,32 +25,42 @@ export function KPICard({ label, value, change, changeLabel, variant, isLoading,
   
   return (
     <motion.div 
-      initial={{ opacity: 0, y: 15, scale: 0.98 }}
+      initial={{ opacity: 0, y: 20, scale: 0.95 }}
       animate={{ opacity: 1, y: 0, scale: 1 }}
       transition={{ 
-        duration: 0.6, 
+        duration: 0.7, 
         delay, 
         type: "spring", 
-        stiffness: 70, 
+        stiffness: 80, 
         damping: 15 
       }}
       whileHover={{ 
-        y: -4, 
-        scale: 1.01,
-        transition: { duration: 0.2, ease: "easeOut" } 
+        y: -6, 
+        scale: 1.02,
+        transition: { duration: 0.3, ease: "easeOut" } 
       }}
-      className="relative bg-surface border border-border/80 rounded-2xl p-7 flex flex-col justify-between shadow-sm hover:shadow-lg transition-all overflow-hidden group"
+      className="relative glass-panel rounded-3xl p-8 flex flex-col justify-between transition-all overflow-hidden group hover:border-accent/40 hover:shadow-glow"
     >
-      <div className="absolute inset-0 bg-gradient-to-br from-transparent to-black/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+      {/* Glow effect blob behind card items */}
+      <div className="absolute -top-24 -right-24 w-48 h-48 bg-accent/10 rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
+      {/* Subtle shine effect on hover */}
+      <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/40 to-transparent opacity-0 group-hover:opacity-100 transform -translate-x-full group-hover:translate-x-full transition-all duration-1000 ease-in-out pointer-events-none" />
       
-      <p className="text-sm font-medium text-text-subtle mb-4 uppercase tracking-wider">{label}</p>
-      <h3 className="font-display text-4xl lg:text-5xl text-gray-900 mb-5 tracking-tight truncate drop-shadow-sm">{value}</h3>
+      <div className="relative z-10 flex justify-between items-center mb-4">
+        <p className="text-xs font-bold text-gray-500 uppercase tracking-widest">{label}</p>
+        <span className={`w-2.5 h-2.5 rounded-full shadow-sm animate-pulseGlow ${variant === 'income' ? 'bg-income' : variant === 'expense' ? 'bg-expense' : 'bg-accent'}`} />
+      </div>
+      
+      <h3 className={`relative z-10 font-display text-4xl lg:text-5xl mb-5 tracking-tight truncate drop-shadow-sm ${variant === 'income' ? 'text-income' : variant === 'expense' ? 'text-expense' : 'text-gray-900'}`}>
+        {value}
+      </h3>
+
       {change !== undefined && (
-        <p className="text-xs flex items-center gap-2 font-medium text-text-subtle">
-          <span className={`px-2 py-1 rounded-md text-xs font-semibold tracking-wide ${isPositive ? (variant === 'expense' ? 'bg-expense-bg text-expense' : 'bg-income-bg text-income') : (variant === 'expense' ? 'bg-income-bg text-income' : 'bg-expense-bg text-expense')}`}>
+        <p className="relative z-10 text-xs flex items-center gap-2 font-medium text-gray-500">
+          <span className={`px-2 py-1.5 rounded-lg text-xs font-bold tracking-wide shadow-sm backdrop-blur-md ${isPositive ? (variant === 'expense' ? 'bg-expense/10 text-expense border border-expense/20' : 'bg-income/10 text-income border border-income/20') : (variant === 'expense' ? 'bg-income/10 text-income border border-income/20' : 'bg-expense/10 text-expense border border-expense/20')}`}>
             {isPositive ? '↗' : '↘'} {Math.abs(change)}%
           </span>
-          <span className="font-normal text-gray-500">{changeLabel || 'vs last month'}</span>
+          <span className="font-medium text-gray-400">{changeLabel || 'vs last month'}</span>
         </p>
       )}
     </motion.div>
